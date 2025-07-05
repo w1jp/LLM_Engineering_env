@@ -14,7 +14,9 @@ COPY llm_engineering/environment.yml environment.yml
 
 COPY LLM_Engineering_env/requirements.txt requirements.txt
 
-RUN apt update && apt install vim nano less
+RUN apt-get update && apt-get install -y vim nano less && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN conda env create -f environment.yml && \
     conda clean -a -y && \
