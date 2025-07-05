@@ -22,7 +22,7 @@ The course is based on an anaconda image. I do not like global things as I do ma
       jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=/wrk
       ```
 
-  This will start the jupyter environment. It also takes the root project folder and places that in the docker image. If you make changes in jupyter, those changes will also be in your local files. 
+  This will start the jupyter environment. It will give you a URL with a token to use to access Jupyter in your browswer. I also put the root project folder and places that in the docker image. If you make changes in Jupyter, those changes will also be in your local files. 
 
   If you need a terminal in the environment (e.g., to install a python package or edit the .env):
       ```bash
