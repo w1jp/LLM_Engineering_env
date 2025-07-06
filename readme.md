@@ -22,14 +22,20 @@ The course is based on an anaconda image. I do not like global things as I do ma
       jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --notebook-dir=/wrk
       ```
 
-  This will start the jupyter environment. It will give you a URL with a token to use to access Jupyter in your browswer. I also put the root project folder and places that in the docker image. If you make changes in Jupyter, those changes will also be in your local files. 
+This will start the jupyter environment. It will give you a URL with a token to use to access Jupyter in your browswer. I also put the root project folder and places that in the docker image. If you make changes in Jupyter, those changes will also be in your local files. 
 
-  If you need a terminal in the environment (e.g., to install a python package or edit the .env):
-      ```bash
-      docker exec -it llm_anaconda_env bash
-      ```
+If you need a terminal in the environment (e.g., to install a python package or edit the .env):
+    ```bash
+    docker exec -it llm_anaconda_env bash
+    ```
+## Gardio
+I have added gradio.app support by opening up additional ports. When using gradio from a docker container, add this evnironment variable:
+```python
+os.environ['GRADIO_SERVER_NAME']='0.0.0.0'
+```
+The default name ('127.0.0.1') will not work from docker. Alternatively, you can do this from the `gr.Interface().launch(server_name='0.0.0.0')` call.
 
-I am only on Day2 so I may add more to this as I progress.
+I am only on Week2 so I may add more to this as I progress.
 
 Skål,
 Jon
