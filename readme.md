@@ -15,7 +15,7 @@ The course is based on an anaconda image. I do not like global things as I do ma
       ```
   2. Run the image:
       ```bash
-      docker run --name llm_anaconda_env -it --rm -p 8888:8888 -v $PWD:/wrk llm_anaconda
+      docker run --name llm_anaconda_env -it --rm -p 8888:8888 -p 7860-7899:7860-7899 -v $PWD:/wrk llm_anaconda
       ```
   3. You should now be at a bash prompt. To start Jupyter Lab:
       ```bash
